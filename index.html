@@ -1,34 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="style.css">
     <title>JavaScript Number Guessing Game</title>
     <script src="script.js" defer></script>
+    
+    <audio id="geniusSound" src="audios/voxgenius01-36084.mp3"></audio>
+    <audio id="smartSound" src="audios/smart-ass-good-96013.mp3"></audio>
+    <audio id="notBadSound" src="audios/badddd.mp3"></audio>
+    <audio id="getoutSound" src="audios/getout.mp3"></audio>
   </head>
   <body>
+    <div id="container">
     <p id="date"></p>
 
+    <h3> Name</h3>
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="yourname()">Submit</button>
+    
+    <br>
+    <h3 id="welcomemsg"></h3>
+    <hr>
     <h3>Level</h3>
     <input type="radio" name="level" id="e" value="3" checked><label for="e">Easy</label>
     <input type="radio" name="level" id="m" value="10"><label for="m">Medium</label>
     <input type="radio" name="level" id="h" value="100"><label for="h">Hard</label>
 
     <button id="playBtn">Play</button>
-
+    <hr>
     <h3 id="msg">Select a Level</h3>
+    <h3 id="critic"></h3>
     <input type="text" id="guess">
     <button id="guessBtn" disabled>Guess</button>
-    <button id="giveUp" disabled>Give Up</button>
-
+    <button id="giveUp" disabled onclick="letsgiveup()">Give Up</button> 
+    <h3 id="Warmness"></h3>
+    <div style="display: flex; gap: 3px;">
+      <h3 id="stopwatch"></h3>
+      <h3 id="stopwatch2"></h3>
+    </div>
+    <hr>
     <h3>Stats</h3>
     <p id="wins">Total wins: 0</p>
     <p id="avgScore">Average Score: </p>
+    <p id="avgtime">Average Time: </p>
     
-
-    <h3>Leaderboard</h3>
+    <hr>
+    <h3>Leaderboard🏆</h3>
     <ol>
-      <li name="leaderboard">100</li>
-      <li name="leaderboard">100</li>
-      <li name="leaderboard">100</li>
+      <li name="leaderboard"></li>
+      <li name="leaderboard"></li>
+      <li name="leaderboard"></li>
     </ol>
+    <hr>
+    <h3>Fastest Game Played</h3>
+  
+      <h4 id="fastesttime"></h4>
+    </div>
   </body>
 </html>
